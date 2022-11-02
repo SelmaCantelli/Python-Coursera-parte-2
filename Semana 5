@@ -1,0 +1,38 @@
+### Busca binária
+
+def busca(lista, elemento):
+    p, u = 0, len(lista)-1
+    while p <= u:
+        m = (p + u)//2
+        print(m)
+        if lista[m] == elemento:
+            return m
+        else:
+            if lista[m] > elemento:
+                u = m -1
+            else:
+                p = m + 1
+    return False
+    
+  ### Ordenação com  buble
+  
+  def bubble_sort(lista):
+    for i in range(len(lista)-1, 0, -1):
+        for j in range(i):
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j]
+                print(lista)   
+    return lista
+    
+      ### Ordenação com  insertion
+      def insertion_sort(lista):
+    n = len(lista)
+    for j in range(1, n):
+        k = lista[j]
+        i = j - 1
+        while i >= 0 and lista[i] > k:
+            lista[i + 1] = lista[i]
+            i -= 1
+        lista[i + 1] = k
+    return lista
+    
