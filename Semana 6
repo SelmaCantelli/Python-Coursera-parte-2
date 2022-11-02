@@ -1,0 +1,140 @@
+### Elefantes
+
+
+def  incomodam ( n : int ) ->  str :    
+    mstr  =  ""
+
+    if  n  >  0 :
+        mstr +=  "incomodam"
+        return  mstr  +  incomodam ( n - 1 )
+
+        return mstr
+
+
+def  elefantes ( n : int , max = None ) ->  str :
+    
+    if  not  max :
+        max , n  =  n , 4
+
+    if  n  <=  máximo :
+        if  n  ==  4 :
+            mstr  =   "Um elefante incomoda muita gente \n "
+            mstr  +=  "{} elefantes {}muito mais \n ". formato ( n , incomodam ( n ))
+            
+            mstr  =  "{} elefantes {}muito mais \n " . formato ( n , incomodam ( n ))
+
+        if  n  <  max :
+            mstr  +=  "{} elefantes incomodam muita gente \n " . formato ( n )
+
+        return  mstr  +  elefantes ( n + 4 , max )
+
+    return  ""
+    
+    #### Elefantes 2
+    
+    def incomodam(n):
+    if n <= 0:
+        return ''
+    else:
+        return 'incomodam ' + incomodam(n - 1)
+
+def elefantes(n):
+    if n <= 1:
+        return ''
+    else:
+        count = 1
+        string = 'Um elefante incomoda muita gente ' 
+        while count < n:
+            count += 1
+            if count < n:
+                string += str(count) + ' elefantes ' + incomodam(count) + 'muito mais '
+                string += str(count) + ' elefantes ' + incomodam(count) + 'muita gente '
+            else:
+                string += str(count) + ' elefantes ' + incomodam(count) + 'muito mais '
+
+    return string
+    
+        #### Elefantes 3
+        
+        def incomodam(n):
+    if n <= 0:
+        return ""
+    elif n % 1 == 0:
+        return "incomodam " + incomodam(n-1)
+    else:
+        return ""
+
+def elefantes(n):
+    if n == 1:
+        return "Um elefante incomoda muita gente"
+    elif n == 2:
+        return elefantes(n-1) + f"\n{n} elefantes "+ incomodam(n) +"muito mais" 
+    elif n > 2:
+        frase1 = f"\n{n-1} elefantes incomodam muita gente"
+        frase2 = f"\n{n} elefantes "+ incomodam(n) +"muito mais"
+        return elefantes(n-1) + frase1 +frase2
+    else:
+        return ""
+        
+      ### Fatorial
+      
+      def fatorial(n: int) -> int:
+    return 1 if n < 1 else n * fatorial(n-1)
+    
+    
+    ### Fibonacci
+    
+    def fibonacci(n: int) -> int:  
+    return n if n < 2 else fibonacci(n-1) + fibonacci(n-2)
+    
+    
+    ### Ímpares
+    
+    def encontra_impares(lista):
+    l = []
+    if len(lista) > 0:
+        if lista[0] % 2 == 1:
+            #print(lista, lista[0])
+            l.extend([lista[0]])
+        del(lista[0])
+        l += encontra_impares(lista)
+    return l
+    
+    
+    ### Pyteste elefantes
+    
+    import pytest
+@pytest.mark.parametrize("test_input,expected", [
+    (0, ""),
+    (1, "Um elefante incomoda muita gente"),
+    (2, "Um elefante incomoda muita gente\n2 elefantes incomodam incomodam muito mais"),
+    (3,"Um elefante incomoda muita gente\n2 elefantes incomodam incomodam muito mais\n2 elefantes incomodam muita gente\n3 elefantes incomodam incomodam incomodam muito mais"),
+    (4,"Um elefante incomoda muita gente\n2 elefantes incomodam incomodam muito mais\n2 elefantes incomodam muita gente\n3 elefantes incomodam incomodam incomodam muito mais\n3 elefantes incomodam muita gente\n4 elefantes incomodam incomodam incomodam incomodam muito mais"),
+    (-1,""),
+])
+def test_eval(test_input, expected):
+    assert elefantes(test_input) == expected
+    
+    
+    ### Soma recursiva
+    
+    def soma_lista(list: list) -> int:
+    """Recebe uma lista de inteiros e retorna a soma dos elementos."""
+    if len(list) == 1:
+        return list[0]
+
+    return list[0] + soma_lista(list[1:])
+    
+    
+    ### Soma 
+    
+    def soma_lista(lista):
+    lista[0] += lista[-1]
+    del(lista[-1])
+    if len(lista) == 1:
+        return lista[0]
+    soma_lista(lista)
+    return lista[0]
+    
+    
+    
