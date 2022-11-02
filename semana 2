@@ -1,0 +1,34 @@
+###Maior
+
+def  maiusculas ( frase ):
+    resultado2 = ""
+    
+    for  i  in ( frase ):
+        caracter  =  i
+        decASCII  =  ord ( caracter )
+       
+        if  decASCII  >= 65  and  decASCII  <=  90 :
+            resultado2 = resultado2 + caracter
+
+    return  resultado2
+
+maiusculas('Programamos em python 2?')
+maiusculas ('Programamos em Python 3.')
+maiusculas('PrOgRaMaMoS em python!')
+
+###Menor Nome
+
+def  menor_nome ( nomes ):
+    nomeCurto  =  nomes [ 0 ]
+    comprimentoDoNomeCurto  =  len ( nomes [ 0 ])
+
+    for nome in nomes :
+        nome  =  nome.strip()
+
+        if  len ( nome ) <  comprimentoDoNomeCurto :
+            comprimentoDoNomeCurto  =  len ( nome )
+            nomeCurto  =  nome
+
+    return  nomeCurto.capitalize()
+nomes  = [ 'maria' , 'josé' , 'PAULO' , 'Catarina', 'ana' ]
+menor_nome(nomes)
