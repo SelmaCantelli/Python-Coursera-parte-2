@@ -1,0 +1,122 @@
+### Busca Sequencial 
+def  busca ( list : list , element ):
+    for  i , el  in  enumerate ( list ):
+        if  element  ==  el :
+            return  True 
+                    
+    return  False
+    ### Busca Sequencial
+    
+    def busca(lista, elemento):
+    for i in range(len(lista)):
+        if elemento == lista[i]:
+            return i
+    return False
+    
+   ### Busca Sequencial 
+    def  ordena ( list : list ) ->  list :
+        n_list  =  list [:]
+
+    for  i  in  interval ( len ( n_list ) - 1 ):
+        min_position  =  I
+
+        for  j  in  interval ( i + 1 , len ( n_list )):
+            if  n_list [ j ] <  n_list [ min_position ]:
+                min_position  =  j
+
+        n_list [ i ], n_list [ min_position ] =  n_list [ min_position ], n_list [ i ]
+
+    return n_list  
+    
+    ### Lista Grande
+    
+    import random
+def lista_grande(n):
+    l = []
+    for i in range(n):
+        l.append(int(random.random()*10))
+    return l
+    
+    ### Lista Ordenada
+    
+    def  busca ( list : list , element ):
+    for  i , el  in  enumerate ( list ):
+        if  element  ==  el :
+            return  True 
+                    
+    return  False
+
+busca([12, 13, 14], 15)
+True
+
+    ### Lista Ordenada
+    
+    def ordenada(lista):
+    for i in range(len(lista)-1):     
+        if lista[i] > lista[i+1]:
+            return False
+    return True
+
+
+l1 = [1,2,3,4,5,6]; l2 = [1,2,5,4,3,2]
+print(l1, ordenada(l1), '\n', l2, ordenada(l2))
+
+ ### Lista Sequencial
+ 
+ def  sequencial_search ( elementos : list , value ):
+    for  index , element  in  enumerate ( elementos ):
+        if  elemento  ==  valor :
+            return index
+
+    return  False
+
+busca([12, 13, 14], 15)
+
+False
+
+
+### Ordenação com seleção
+
+def ordena(lista): # selection sort
+    for i in range(len(lista)-1):
+        p = i
+        for j in range(i+1, len(lista)):
+            print(i,j,len(lista))
+            if lista[j] < lista[p]:
+                p = j
+        lista[i], lista[p] = lista[p], lista[i]
+    return lista
+def test():    
+    print(lista_grande(20))
+    l = [10, 90, 30, 40, 50, 70, 80, 20, 100, 60]
+    print(ordena(l))
+test()
+
+### Ordenação com seleção
+def  ordena ( list : list ) ->  list :
+        n_list  =  list [:]
+
+    for  i  in  interval ( len ( n_list ) - 1 ):
+        min_position  =  I
+
+        for  j  in  interval ( i + 1 , len ( n_list )):
+            if  n_list [ j ] <  n_list [ min_position ]:
+                min_position  =  j
+
+        n_list [ i ], n_list [ min_position ] =  n_list [ min_position ], n_list [ i ]
+
+    return n_list  
+
+
+### Ordenação com seleção
+
+def ordena(lista): 
+    for i in range(len(lista)-1):
+        p = i
+        for j in range(i+1, len(lista)):
+            print(i,j,len(lista))
+            if lista[j] < lista[p]:
+                p = j
+        lista[i], lista[p] = lista[p], lista[i]
+    return lista
+
